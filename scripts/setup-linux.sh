@@ -57,14 +57,13 @@ ensure_ollama_running() {
   return 1
 }
 
-# Télécharge une voix Piper (.onnx + .json) dans /opt/lumen/voices/piper.
+# Télécharge une voix Piper (.onnx + .json) dans le dossier de données lu par l app.
 install_piper_voice() {
-  local name="$1" model_url="$2" config_url="$3" dir="/opt/lumen/voices/piper"
+  local name="$1" model_url="$2" config_url="$3" dir="${XDG_DATA_HOME:-$HOME/.local/share}/com.mickaelhoarau.lumen/piper-voices"
   echo "→ Téléchargement de la voix Piper $name"
-  sudo mkdir -p "$dir"
-  sudo curl -fsSL "$model_url"  -o "$dir/$name.onnx"
-  sudo curl -fsSL "$config_url" -o "$dir/$name.onnx.json"
-  if [ ! -e "/opt/piper/voices" ]; then sudo ln -s "$dir" /opt/piper/voices 2>/dev/null || true; fi
+  mkdir -p "$dir"
+  curl -fsSL "$model_url"  -o "$dir/$name.onnx"
+  curl -fsSL "$config_url" -o "$dir/$name.onnx.json"
 }
 
 install_voices_piper() {
