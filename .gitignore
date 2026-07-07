@@ -1,0 +1,10 @@
+# macOS AppleDouble files (external volume)
+._*
+.DS_Store
+
+# App binaries are distributed via GitHub Releases, never committed
+*.dmg
+*.exe
+*.deb
+*.AppImage
+*.msi
