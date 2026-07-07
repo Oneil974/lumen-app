@@ -17,6 +17,19 @@ Plateformes : **macOS · Windows · Linux · Raspberry Pi**.
 | Linux (Debian/Ubuntu) | `.deb` |
 | Raspberry Pi (arm64) | `.deb` |
 
+## Prérequis & installation
+
+Pour l'inférence 100 % locale, Lumen a besoin d'**[Ollama](https://ollama.com)**. Des scripts « tout-en-un » installent Ollama + un modèle, et (sous Linux/Pi) les voix locales **Piper** & **Kokoro** et la dictée **whisper.cpp** :
+
+| Système | Commande (dans `scripts/`) |
+|---|---|
+| macOS | `./setup-macos.sh` |
+| Linux (Debian/Ubuntu) | `./setup-linux.sh` |
+| Raspberry Pi OS | `./setup-pi.sh` |
+| Windows | `powershell -ExecutionPolicy Bypass -File .\setup-windows.ps1` |
+
+Détails, options et installation séparée des voix : **[scripts/README.md](scripts/README.md)**.
+
 ## Site
 
 Page de présentation : **https://Oneil974.github.io/lumen-app/**
